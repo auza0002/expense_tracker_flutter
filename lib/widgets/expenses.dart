@@ -1,3 +1,4 @@
+import 'package:expense_tracker_app/widgets/chart.dart';
 import 'package:expense_tracker_app/widgets/expenses_list/expenses_list.dart';
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:expense_tracker_app/widgets/new_expense.dart';
@@ -14,7 +15,7 @@ class _ExpensesState extends State<Expenses> {
   final List<Expense> _registerExpenses = [
     Expense(
       title: "Flutter course",
-      amount: 80,
+      amount: 20,
       date: DateTime.now(),
       category: Category.work,
     ),
@@ -29,6 +30,12 @@ class _ExpensesState extends State<Expenses> {
       amount: 9,
       date: DateTime.now(),
       category: Category.food,
+    ),
+    Expense(
+      title: "Canada",
+      amount: 10,
+      date: DateTime.now(),
+      category: Category.travel,
     ),
   ];
 
@@ -93,7 +100,10 @@ class _ExpensesState extends State<Expenses> {
         ],
       ),
       body: Column(
-        children: [const Text("The chart"), Expanded(child: mainContent)],
+        children: [
+          Chart(expenses: _registerExpenses),
+          Expanded(child: mainContent),
+        ],
       ),
     );
   }
