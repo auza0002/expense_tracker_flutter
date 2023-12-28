@@ -1,3 +1,5 @@
+// this is the file that is run when the app is started
+
 import 'package:expense_tracker_app/widgets/expenses.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
